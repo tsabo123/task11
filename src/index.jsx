@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom/client';
+import Listitem from "./Listitem"
 
 
-function ListItems(props) {
-    const fruits = props.fruits;
-    const listItems = fruits.map((fruits) =>
-      <li>{fruits}</li>
-    );
-    return (
-      <ul>{listItems}</ul>
-    );
+ 
+function App() {
+  let arr = ["apple", "banana", "orange", "grape", "kiwi"];
+
+  return (
+
+    <Fragment >
+       <Listitem masivi={arr}></Listitem>
+    </Fragment>
+  );
+    
+
+
   }
   
-  let fruits = ["apple", "banana", "orange", "grape", "kiwi"]; 
+  
   const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(<ListItems fruits={fruits} />);
+  root.render(<App />);
